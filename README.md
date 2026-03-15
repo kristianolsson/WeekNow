@@ -55,6 +55,3 @@ app/src/main/
     └── values/               # strings, colors, themes
 ```
 
-## License
-
-MIT
