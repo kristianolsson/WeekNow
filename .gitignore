@@ -1,0 +1,39 @@
+# Built application files
+*.apk
+*.aab
+*.ap_
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Gradle files
+.gradle/
+build/
+app/build/
+app/release/
+
+# Local configuration (holds SDK path — machine-specific, do not commit)
+local.properties
+
+# Android Studio / IntelliJ IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Capture files from Android profiler
+*.hprof
+
+# Mac OS
+.DS_Store
+**/.DS_Store
+
+# Proguard folder (if any generated outputs land here)
+proguard/
+
+# Kotlin compiled output
+*.class
+
+# Keystore files — never commit signing keys
+*.jks
+*.keystore

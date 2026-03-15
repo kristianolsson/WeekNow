@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark mode colors (used when device is in dark theme) -->
+    <color name="background">#0F1117</color>
+    <color name="surface">#1C1E27</color>
+    <color name="accent">#5C6BC0</color>
+    <color name="text_primary">#EAEAEA</color>
+    <color name="text_secondary">#7A7F99</color>
+</resources>
