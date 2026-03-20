@@ -43,7 +43,7 @@ A minimal Android app that permanently shows the current **ISO week number** as 
 
 ```
 app/src/main/
-├── java/com/weeknow/app/
+├── java/com/kristianolsson/weeknow/
 │   ├── MainActivity.kt       # UI + settings
 │   ├── WeekService.kt        # Foreground notification service
 │   ├── WeekIconHelper.kt     # Bitmap icon generation
