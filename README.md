@@ -14,6 +14,19 @@ A minimal Android app that permanently shows the current **ISO week number** as 
   - First day of week — Monday (ISO 8601) or Sunday (US convention)
 - 🔔 **Tap notification to open the app**
 
+## Troubleshooting (Samsung / One UI 6+)
+
+If the week number is missing from your status bar on a Samsung device:
+
+1. **Check "Sort and Filter Notifications":**
+   Go to **Settings > Notifications**. Look for **"Sort and filter notifications"** and ensure **"Background activities"** is **unchecked**. Samsung often filters persistent icons to the "More notifications" bucket.
+
+2. **Enable Notification Categories:**
+   Go to **Settings > Notifications > Advanced settings** and turn **ON** "Manage notification categories for each app". Then, in **App Info > Notifications > Notification Categories**, ensure "Week Number" is set to **Alert** (not Silent).
+
+3. **Battery Optimization:**
+   Go to **App Info > Battery** and set it to **"Unrestricted"** to prevent the system from killing the background service.
+
 ## How it works
 
 | Component | Role |
@@ -38,6 +51,3 @@ A minimal Android app that permanently shows the current **ISO week number** as 
 2. Open the project in Android Studio (`File → Open → weeknow/`)
 3. Wait for Gradle sync to complete
 4. Run on an emulator or physical device (API 26+)
-
-
-
