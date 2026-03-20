@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Light mode colors -->
-    <color name="background">#F4F6FA</color>
-    <color name="surface">#FFFFFF</color>
-    <color name="accent">#3949AB</color>
-    <color name="text_primary">#1A1C26</color>
-    <color name="text_secondary">#6B6F85</color>
+    <color name="background">#FFFFFF</color>
+    <color name="surface">#F4F6F5</color>
+    <color name="accent">#54868A</color>
+    <color name="text_primary">#2D3330</color>
+    <color name="text_secondary">#7A8581</color>
+
+    <!-- Custom component colors -->
+    <color name="calendar_paper">@color/surface</color>
+    <color name="calendar_paper_shadow">#D5DEDA</color>
+    <color name="calendar_board">#75847F</color>
+    <color name="calendar_blue">#507996</color>
+    <color name="toggle_unselected_bg">#E1E6E4</color>
+    <color name="toggle_unselected_text">#75847F</color>
+    <color name="toggle_selected_bg">@color/accent</color>
+    <color name="toggle_selected_text">#FFFFFF</color>
 
     <!-- Required by Material theme -->
     <color name="purple_200">#FFBB86FC</color>

@@ -1,0 +1,64 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="240dp"
+    android:height="240dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Floor Shadow -->
+    <path 
+        android:fillColor="#15000000" 
+        android:pathData="M 25,185 h150 a10,10 0 0,1 0,10 h-150 a10,10 0 0,1 0,-10 Z" />
+
+    <!-- Board -->
+    <path 
+        android:fillColor="#7D978D" 
+        android:pathData="M 25,30 h150 a8,8 0 0,1 8,8 v142 a8,8 0 0,1 -8,8 h-150 a8,8 0 0,1 -8,-8 v-142 a8,8 0 0,1 8,-8 Z" />
+
+    <!-- Board Lip / Top shadow to simulate binder depth -->
+    <path 
+        android:fillColor="#5E756C" 
+        android:pathData="M 17,40 h166 v8 h-166 Z" />
+
+    <!-- Paper Drop Shadow -->
+    <path 
+        android:fillColor="#22000000" 
+        android:pathData="M 32,45 h136 a5,5 0 0,1 5,5 v126 a5,5 0 0,1 -5,5 h-136 a5,5 0 0,1 -5,-5 v-126 a5,5 0 0,1 5,-5 Z" />
+
+    <!-- White Paper -->
+    <path 
+        android:fillColor="#FFFFFF" 
+        android:pathData="M 30,41 h136 a5,5 0 0,1 5,5 v126 a5,5 0 0,1 -5,5 h-136 a5,5 0 0,1 -5,-5 v-126 a5,5 0 0,1 5,-5 Z" />
+
+    <!-- Metal Rings Back -->
+    <path 
+        android:fillColor="#556E66" 
+        android:pathData="M 62,15 a8,8 0 0,1 16,0 v30 h-16 Z" />
+    <path 
+        android:fillColor="#556E66" 
+        android:pathData="M 118,15 a8,8 0 0,1 16,0 v30 h-16 Z" />
+
+    <!-- Holes -->
+    <path 
+        android:fillColor="#32463F" 
+        android:pathData="M 64,54 a 6,6 0 1,0 12,0 a 6,6 0 1,0 -12,0" />
+    <path 
+        android:fillColor="#32463F" 
+        android:pathData="M 120,54 a 6,6 0 1,0 12,0 a 6,6 0 1,0 -12,0" />
+
+    <!-- Metal Rings Front -->
+    <path 
+        android:fillColor="#C6D1CC" 
+        android:pathData="M 62,15 a8,8 0 0,1 16,0 v43 a8,8 0 0,1 -16,0 Z" />
+    <path 
+        android:fillColor="#C6D1CC" 
+        android:pathData="M 118,15 a8,8 0 0,1 16,0 v43 a8,8 0 0,1 -16,0 Z" />
+
+    <!-- Metal Specular Highlights -->
+    <path 
+        android:fillColor="#FFFFFF" 
+        android:pathData="M 64,15 a6,6 0 0,1 6,0 v38 a6,6 0 0,1 -6,0 Z" />
+    <path 
+        android:fillColor="#FFFFFF" 
+        android:pathData="M 120,15 a6,6 0 0,1 6,0 v38 a6,6 0 0,1 -6,0 Z" />
+
+</vector>

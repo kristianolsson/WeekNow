@@ -97,7 +97,6 @@ class WeekService : Service() {
         return Notification.Builder(this, CHANNEL_ID)
             .setSmallIcon(icon)
             .setContentTitle("Week $weekNumber")
-            .setContentText("WeekNow is running")
             .setContentIntent(pendingIntent)
             .setOngoing(true)           // Makes it undismissable by the user
             .setOnlyAlertOnce(true)

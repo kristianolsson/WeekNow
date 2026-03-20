@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Dark mode colors (used when device is in dark theme) -->
-    <color name="background">#0F1117</color>
-    <color name="surface">#1C1E27</color>
-    <color name="accent">#5C6BC0</color>
+    <color name="background">#121212</color>
+    <color name="surface">#1E201F</color>
+    <color name="accent">#6DB3B8</color>
     <color name="text_primary">#EAEAEA</color>
-    <color name="text_secondary">#7A7F99</color>
+    <color name="text_secondary">#9EACA7</color>
+
+    <!-- Custom component colors -->
+    <color name="calendar_paper">@color/surface</color>
+    <color name="calendar_paper_shadow">#121413</color>
+    <color name="calendar_board">#35423E</color>
+    <color name="calendar_blue">#6FA3C4</color>
+    <color name="toggle_unselected_bg">#2C3330</color>
+    <color name="toggle_unselected_text">#A8B5B0</color>
+    <color name="toggle_selected_bg">@color/accent</color>
+    <color name="toggle_selected_text">#121212</color>
 </resources>

@@ -20,19 +20,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
-            android:textSize="36sp"
+            android:textSize="44sp"
             android:textStyle="bold"
             android:textColor="@color/text_primary"
             android:letterSpacing="0.05"
-            android:layout_marginBottom="4dp" />
+            android:layout_marginBottom="8dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/subtitle"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textColor="@color/text_secondary"
-            android:layout_marginBottom="32dp" />
+            android:layout_marginBottom="40dp" />
 
         <TextView
             android:id="@+id/labelCurrentWeek"
@@ -40,197 +40,214 @@
             android:layout_height="wrap_content"
             android:text="@string/label_current_week"
             android:textSize="13sp"
+            android:textStyle="bold"
             android:textAllCaps="true"
             android:letterSpacing="0.12"
-            android:textColor="@color/text_secondary"
-            android:layout_marginBottom="4dp" />
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="16dp" />
 
-        <TextView
-            android:id="@+id/textWeekNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="--"
-            android:textSize="96sp"
-            android:textStyle="bold"
-            android:textColor="@color/accent" />
+        <FrameLayout
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/calendar_bg" />
+
+            <!-- The week number text centered on the paper -->
+            <TextView
+                android:id="@+id/textWeekNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="bold"
+                android:text="--"
+                android:textColor="#32423D"
+                android:textSize="96sp" />
+        </FrameLayout>
 
     </LinearLayout>
 
     <!-- ── BOTTOM: settings cards, anchored to bottom ── -->
 
-    <!-- 1. Status bar icon toggle -->
+    <!-- Settings Card -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="24dp"
         app:cardBackgroundColor="@color/surface"
         app:cardElevation="0dp"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp">
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
 
-            <TextView
-                android:layout_width="0dp"
+            <!-- 1. Status bar icon toggle -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/toggle_label"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="@color/text_primary" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp">
 
-            <Switch
-                android:id="@+id/switchEnable"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/toggle_label"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_primary" />
 
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                <Switch
+                    android:id="@+id/switchEnable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
 
-    <!-- 2. Icon size — S/M/L, same total width as Mon/Sun below -->
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="16dp"
-        app:cardBackgroundColor="@color/surface"
-        app:cardElevation="0dp"
-        android:layout_marginBottom="10dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp">
-
-            <TextView
-                android:layout_width="0dp"
+            <!-- 2. Icon size — S/M/L -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/icon_size_label"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="@color/text_primary" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp">
 
-            <com.google.android.material.button.MaterialButtonToggleGroup
-                android:id="@+id/toggleIconSize"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:singleSelection="true"
-                app:selectionRequired="true">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/icon_size_label"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_primary" />
 
-                <!-- minWidth="0dp" removes Material's hidden minimum so buttons can be compact -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnSizeSmall"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/toggleIconSize"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:minWidth="0dp"
-                    app:minWidth="0dp"
-                    android:text="@string/size_s"
-                    android:textSize="13sp"
-                    android:paddingStart="18dp"
-                    android:paddingEnd="18dp" />
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnSizeMedium"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minWidth="0dp"
-                    app:minWidth="0dp"
-                    android:text="@string/size_m"
-                    android:textSize="13sp"
-                    android:paddingStart="18dp"
-                    android:paddingEnd="18dp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSizeSmall"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="0dp"
+                        app:minWidth="0dp"
+                        app:strokeWidth="0dp"
+                        app:backgroundTint="@color/toggle_btn_bg_accent"
+                        android:textColor="@color/toggle_btn_text"
+                        android:text="@string/size_s"
+                        android:textSize="14sp"
+                        android:paddingStart="18dp"
+                        android:paddingEnd="18dp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnSizeLarge"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minWidth="0dp"
-                    app:minWidth="0dp"
-                    android:text="@string/size_l"
-                    android:textSize="13sp"
-                    android:paddingStart="18dp"
-                    android:paddingEnd="18dp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSizeMedium"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="0dp"
+                        app:minWidth="0dp"
+                        app:strokeWidth="0dp"
+                        app:backgroundTint="@color/toggle_btn_bg_accent"
+                        android:textColor="@color/toggle_btn_text"
+                        android:text="@string/size_m"
+                        android:textSize="14sp"
+                        android:paddingStart="18dp"
+                        android:paddingEnd="18dp" />
 
-            </com.google.android.material.button.MaterialButtonToggleGroup>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSizeLarge"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="0dp"
+                        app:minWidth="0dp"
+                        app:strokeWidth="0dp"
+                        app:backgroundTint="@color/toggle_btn_bg_accent"
+                        android:textColor="@color/toggle_btn_text"
+                        android:text="@string/size_l"
+                        android:textSize="14sp"
+                        android:paddingStart="18dp"
+                        android:paddingEnd="18dp" />
 
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+            </LinearLayout>
 
-    <!-- 3. First day of week — Mon/Sun -->
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="16dp"
-        app:cardBackgroundColor="@color/surface"
-        app:cardElevation="0dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp">
-
-            <TextView
-                android:layout_width="0dp"
+            <!-- 3. First day of week — Mon/Sun -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/first_day_label"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="@color/text_primary" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp">
 
-            <com.google.android.material.button.MaterialButtonToggleGroup
-                android:id="@+id/toggleFirstDay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:singleSelection="true"
-                app:selectionRequired="true">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/first_day_label"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_primary" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnMonday"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/toggleFirstDay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:minWidth="0dp"
-                    app:minWidth="0dp"
-                    android:text="@string/monday"
-                    android:textSize="13sp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp" />
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnSunday"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minWidth="0dp"
-                    app:minWidth="0dp"
-                    android:text="@string/sunday"
-                    android:textSize="13sp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnMonday"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="0dp"
+                        app:minWidth="0dp"
+                        app:strokeWidth="0dp"
+                        app:backgroundTint="@color/toggle_btn_bg_accent"
+                        android:textColor="@color/toggle_btn_text"
+                        android:text="@string/monday"
+                        android:textSize="14sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp" />
 
-            </com.google.android.material.button.MaterialButtonToggleGroup>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSunday"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="0dp"
+                        app:minWidth="0dp"
+                        app:strokeWidth="0dp"
+                        app:backgroundTint="@color/toggle_btn_bg_accent"
+                        android:textColor="@color/toggle_btn_text"
+                        android:text="@string/sunday"
+                        android:textSize="14sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp" />
 
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+            </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
