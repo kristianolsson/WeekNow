@@ -3,7 +3,7 @@
     <string name="app_name">WeekNow</string>
     <string name="subtitle">Week number in your status bar</string>
     <string name="label_current_week">Current week</string>
-    <string name="toggle_label">Status bar icon</string>
+    <string name="toggle_label">Enable</string>
     <string name="toggle_description">Show week number in the status bar</string>
     <string name="notification_channel_name">Week Number</string>
     <string name="notification_channel_description">Displays the current week number in the status bar</string>

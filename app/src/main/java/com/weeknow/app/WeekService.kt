@@ -83,7 +83,8 @@ class WeekService : Service() {
         val firstDay = PrefsHelper.getFirstDayOfWeek(this)
         val weekNumber = WeekIconHelper.currentWeekNumber(firstDay)
         val fillFactor = PrefsHelper.getIconSizeFill(this)
-        val icon = WeekIconHelper.buildIcon(weekNumber, fillFactor)
+        val showBorder = PrefsHelper.isShowBorderEnabled(this)
+        val icon = WeekIconHelper.buildIcon(weekNumber, fillFactor, showBorder)
 
         // Tap on notification → open MainActivity
         val openAppIntent = Intent(this, MainActivity::class.java).apply {

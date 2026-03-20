@@ -99,8 +99,8 @@
                 android:gravity="center_vertical"
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp">
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp">
 
                 <TextView
                     android:layout_width="0dp"
@@ -116,6 +116,31 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
+            <!-- *NEW* Show border toggle -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Show border"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_primary" />
+
+                <Switch
+                    android:id="@+id/switchBorder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
             <!-- 2. Icon size — S/M/L -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -124,8 +149,8 @@
                 android:gravity="center_vertical"
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp">
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp">
 
                 <TextView
                     android:layout_width="0dp"
@@ -146,14 +171,20 @@
                         android:id="@+id/btnSizeSmall"
                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="32dp"
                         android:minWidth="0dp"
                         app:minWidth="0dp"
+                        android:minHeight="0dp"
+                        app:minHeight="0dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
                         app:strokeWidth="0dp"
                         app:backgroundTint="@color/toggle_btn_bg_accent"
                         android:textColor="@color/toggle_btn_text"
                         android:text="@string/size_s"
                         android:textSize="14sp"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp"
                         android:paddingStart="18dp"
                         android:paddingEnd="18dp" />
 
@@ -161,14 +192,20 @@
                         android:id="@+id/btnSizeMedium"
                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="32dp"
                         android:minWidth="0dp"
                         app:minWidth="0dp"
+                        android:minHeight="0dp"
+                        app:minHeight="0dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
                         app:strokeWidth="0dp"
                         app:backgroundTint="@color/toggle_btn_bg_accent"
                         android:textColor="@color/toggle_btn_text"
                         android:text="@string/size_m"
                         android:textSize="14sp"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp"
                         android:paddingStart="18dp"
                         android:paddingEnd="18dp" />
 
@@ -176,14 +213,20 @@
                         android:id="@+id/btnSizeLarge"
                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="32dp"
                         android:minWidth="0dp"
                         app:minWidth="0dp"
+                        android:minHeight="0dp"
+                        app:minHeight="0dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
                         app:strokeWidth="0dp"
                         app:backgroundTint="@color/toggle_btn_bg_accent"
                         android:textColor="@color/toggle_btn_text"
                         android:text="@string/size_l"
                         android:textSize="14sp"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp"
                         android:paddingStart="18dp"
                         android:paddingEnd="18dp" />
 
@@ -198,8 +241,8 @@
                 android:gravity="center_vertical"
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp">
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp">
 
                 <TextView
                     android:layout_width="0dp"
@@ -220,14 +263,20 @@
                         android:id="@+id/btnMonday"
                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="32dp"
                         android:minWidth="0dp"
                         app:minWidth="0dp"
+                        android:minHeight="0dp"
+                        app:minHeight="0dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
                         app:strokeWidth="0dp"
                         app:backgroundTint="@color/toggle_btn_bg_accent"
                         android:textColor="@color/toggle_btn_text"
                         android:text="@string/monday"
                         android:textSize="14sp"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp"
                         android:paddingStart="20dp"
                         android:paddingEnd="20dp" />
 
@@ -235,14 +284,20 @@
                         android:id="@+id/btnSunday"
                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="32dp"
                         android:minWidth="0dp"
                         app:minWidth="0dp"
+                        android:minHeight="0dp"
+                        app:minHeight="0dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
                         app:strokeWidth="0dp"
                         app:backgroundTint="@color/toggle_btn_bg_accent"
                         android:textColor="@color/toggle_btn_text"
                         android:text="@string/sunday"
                         android:textSize="14sp"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp"
                         android:paddingStart="20dp"
                         android:paddingEnd="20dp" />
 

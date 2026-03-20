@@ -12,6 +12,7 @@ object PrefsHelper {
     private const val KEY_SERVICE_ENABLED = "service_enabled"
     private const val KEY_FIRST_DAY_OF_WEEK = "first_day_of_week"
     private const val KEY_ICON_SIZE_FILL = "icon_size_fill"
+    private const val KEY_SHOW_BORDER = "show_border"
 
     private fun prefs(context: Context): SharedPreferences =
         context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
@@ -40,5 +41,12 @@ object PrefsHelper {
 
     fun setIconSizeFill(context: Context, fill: Float) {
         prefs(context).edit().putFloat(KEY_ICON_SIZE_FILL, fill).apply()
+    }
+
+    fun isShowBorderEnabled(context: Context): Boolean =
+        prefs(context).getBoolean(KEY_SHOW_BORDER, false)
+
+    fun setShowBorderEnabled(context: Context, show: Boolean) {
+        prefs(context).edit().putBoolean(KEY_SHOW_BORDER, show).apply()
     }
 }

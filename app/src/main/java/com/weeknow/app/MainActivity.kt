@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var weekLabel: TextView
     private lateinit var enableSwitch: Switch
+    private lateinit var borderSwitch: Switch
     private lateinit var firstDayToggle: MaterialButtonToggleGroup
     private lateinit var iconSizeToggle: MaterialButtonToggleGroup
 
@@ -49,6 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         weekLabel = findViewById(R.id.textWeekNumber)
         enableSwitch = findViewById(R.id.switchEnable)
+        borderSwitch = findViewById(R.id.switchBorder)
         firstDayToggle = findViewById(R.id.toggleFirstDay)
         iconSizeToggle = findViewById(R.id.toggleIconSize)
 
@@ -58,6 +60,13 @@ class MainActivity : AppCompatActivity() {
         // Restore service toggle state
         enableSwitch.isChecked = PrefsHelper.isServiceEnabled(this)
         enableSwitch.setOnCheckedChangeListener(switchListener)
+
+        // Restore border toggle state
+        borderSwitch.isChecked = PrefsHelper.isShowBorderEnabled(this)
+        borderSwitch.setOnCheckedChangeListener { _, isChecked ->
+            PrefsHelper.setShowBorderEnabled(this, isChecked)
+            if (PrefsHelper.isServiceEnabled(this)) restartWeekService()
+        }
 
         // Restore first-day-of-week toggle state
         val savedFirstDay = PrefsHelper.getFirstDayOfWeek(this)

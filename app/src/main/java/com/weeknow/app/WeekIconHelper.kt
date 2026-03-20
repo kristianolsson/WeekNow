@@ -35,7 +35,7 @@ object WeekIconHelper {
      * Builds a [Bitmap] with the week number auto-fit to fill ~95% of the icon.
      * White text on transparent background — Android tints it for the status bar.
      */
-    fun buildBitmap(weekNumber: Int, fillFactor: Float = 0.70f): Bitmap {
+    fun buildBitmap(weekNumber: Int, fillFactor: Float = 0.70f, showBorder: Boolean = false): Bitmap {
         val bmp = Bitmap.createBitmap(ICON_SIZE_PX, ICON_SIZE_PX, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bmp)
 
@@ -60,10 +60,27 @@ object WeekIconHelper {
         val y = (ICON_SIZE_PX / 2).toFloat() - (paint.descent() + paint.ascent()) / 2
 
         canvas.drawText(text, x, y, paint)
+
+        if (showBorder) {
+            val strokePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                color = Color.WHITE
+                style = Paint.Style.STROKE
+                strokeWidth = ICON_SIZE_PX * 0.08f // 8% of icon bounds for stroke
+            }
+            val margin = strokePaint.strokeWidth / 2f
+            val cornerRadius = ICON_SIZE_PX * 0.20f // Smooth rounded corners
+            canvas.drawRoundRect(
+                margin, margin, 
+                ICON_SIZE_PX - margin, ICON_SIZE_PX - margin, 
+                cornerRadius, cornerRadius, 
+                strokePaint
+            )
+        }
+
         return bmp
     }
 
     /** Convenience: build the bitmap and wrap as an [Icon]. */
-    fun buildIcon(weekNumber: Int, fillFactor: Float = 0.70f): Icon =
-        Icon.createWithBitmap(buildBitmap(weekNumber, fillFactor))
+    fun buildIcon(weekNumber: Int, fillFactor: Float = 0.70f, showBorder: Boolean = false): Icon =
+        Icon.createWithBitmap(buildBitmap(weekNumber, fillFactor, showBorder))
 }
