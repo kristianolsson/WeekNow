@@ -1,4 +1,4 @@
-package com.weeknow.app
+package com.kristianolsson.weeknow
 
 import android.content.Context
 import android.content.SharedPreferences

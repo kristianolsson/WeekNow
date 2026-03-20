@@ -1,4 +1,4 @@
-package com.weeknow.app
+package com.kristianolsson.weeknow
 
 import android.content.BroadcastReceiver
 import android.content.Context

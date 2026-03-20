@@ -1,4 +1,4 @@
-package com.weeknow.app
+package com.kristianolsson.weeknow
 
 import android.graphics.Bitmap
 import android.graphics.Canvas
