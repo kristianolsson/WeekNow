@@ -39,18 +39,5 @@ A minimal Android app that permanently shows the current **ISO week number** as 
 3. Wait for Gradle sync to complete
 4. Run on an emulator or physical device (API 26+)
 
-## Project structure
 
-```
-app/src/main/
-├── java/com/kristianolsson/weeknow/
-│   ├── MainActivity.kt       # UI + settings
-│   ├── WeekService.kt        # Foreground notification service
-│   ├── WeekIconHelper.kt     # Bitmap icon generation
-│   ├── BootReceiver.kt       # Auto-start after reboot
-│   └── PrefsHelper.kt        # SharedPreferences wrapper
-└── res/
-    ├── layout/activity_main.xml
-    └── values/               # strings, colors, themes
-```
 
