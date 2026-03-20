@@ -9,6 +9,7 @@ A minimal Android app that permanently shows the current **ISO week number** as 
 - 🔁 **Auto-restarts on reboot** — a `BroadcastReceiver` listens for `ACTION_BOOT_COMPLETED`
 - ⚙️ **Configurable settings:**
   - Enable / disable the status bar icon
+  - Show border — wraps the number inside a smooth rounded rectangle
   - Icon size — S / M / L
   - First day of week — Monday (ISO 8601) or Sunday (US convention)
 - 🔔 **Tap notification to open the app**
