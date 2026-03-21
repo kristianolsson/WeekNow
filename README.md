@@ -2,8 +2,6 @@
 
 A minimal Android app that permanently shows the current **ISO week number** as an icon in the status bar.
 
-![App Screenshot](screenshots/main_ui.jpg)
-
 ## Features
 
 - 📅 **Persistent status bar icon** — displays the current week number at all times using a foreground notification service
@@ -15,6 +13,8 @@ A minimal Android app that permanently shows the current **ISO week number** as 
   - Icon size — S / M / L
   - First day of week — Monday (ISO 8601) or Sunday (US convention)
 - 🔔 **Tap notification to open the app**
+
+<img src="screenshots/main_ui.jpg" width="260" alt="App Screenshot">
 
 ## Troubleshooting (Samsung / One UI 6+)
 
