@@ -16,7 +16,7 @@ A minimal Android app that permanently shows the current **ISO week number** as 
 
 | Light Mode | Dark Mode |
 | :---: | :---: |
-| <img src="screenshots/WeekNow1.jpg" width="260" alt="Light Mode"> | <img src="screenshots/WeekNow2.jpg" width="260" alt="Dark Mode"> |
+| <img src="screenshots/WeekNow1.jpg" width="280" alt="Light Mode"> | <img src="screenshots/WeekNow2.jpg" width="280" alt="Dark Mode"> |
 
 ## Troubleshooting (Samsung / One UI 6+)
 
