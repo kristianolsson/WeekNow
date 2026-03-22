@@ -14,7 +14,9 @@ A minimal Android app that permanently shows the current **ISO week number** as 
   - First day of week — Monday (ISO 8601) or Sunday (US convention)
 - 🔔 **Tap notification to open the app**
 
-<img src="screenshots/main_ui.jpg" width="260" alt="App Screenshot">
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| <img src="screenshots/WeekNow1.jpg" width="260" alt="Light Mode"> | <img src="screenshots/WeekNow2.jpg" width="260" alt="Dark Mode"> |
 
 ## Troubleshooting (Samsung / One UI 6+)
 
