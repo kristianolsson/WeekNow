@@ -2,6 +2,8 @@
 
 A minimal Android app that permanently shows the current **ISO week number** as an icon in the status bar.
 
+![WeekNow](images/WeekNow.png)
+
 ## Features
 
 - 📅 **Persistent status bar icon** — displays the current week number at all times using a foreground notification service
@@ -16,7 +18,7 @@ A minimal Android app that permanently shows the current **ISO week number** as 
 
 | Light Mode | Dark Mode |
 | :---: | :---: |
-| <img src="screenshots/WeekNow1.jpg" width="280" alt="Light Mode"> | <img src="screenshots/WeekNow2.jpg" width="280" alt="Dark Mode"> |
+| <img src="images/WeekNow1.jpg" width="280" alt="Light Mode"> | <img src="images/WeekNow2.jpg" width="280" alt="Dark Mode"> |
 
 ## Troubleshooting (Samsung / One UI 6+)
 
