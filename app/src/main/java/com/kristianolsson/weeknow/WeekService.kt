@@ -9,22 +9,18 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.pm.ServiceInfo
 import android.media.AudioAttributes
+import android.os.Build
 import android.os.IBinder
 
 /**
  * Foreground service that posts a persistent notification displaying the current week number.
- *
- * The notification's small icon is a programmatically generated bitmap so the week
- * number appears directly in the Android status bar.
- *
- * An internal BroadcastReceiver listens for ACTION_DATE_CHANGED so the icon updates
- * automatically whenever the day (or week) rolls over at midnight.
  */
 class WeekService : Service() {
 
     companion object {
-        private const val CHANNEL_ID = "weeknow_v2"  // v2: changed from IMPORTANCE_LOW to DEFAULT
+        private const val CHANNEL_ID = "weeknow_v2"
         private const val NOTIFICATION_ID = 1001
     }
 
@@ -41,36 +37,46 @@ class WeekService : Service() {
         createNotificationChannel()
 
         val filter = IntentFilter(Intent.ACTION_DATE_CHANGED)
-        registerReceiver(dateChangeReceiver, filter)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            registerReceiver(dateChangeReceiver, filter, Context.RECEIVER_NOT_EXPORTED)
+        } else {
+            registerReceiver(dateChangeReceiver, filter)
+        }
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        startForeground(NOTIFICATION_ID, buildNotification())
+        // Android 14+ requires the service type to be declared during startForeground
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+            startForeground(
+                NOTIFICATION_ID,
+                buildNotification(),
+                ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE
+            )
+        } else {
+            startForeground(NOTIFICATION_ID, buildNotification())
+        }
         return START_STICKY
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        unregisterReceiver(dateChangeReceiver)
+        try {
+            unregisterReceiver(dateChangeReceiver)
+        } catch (e: Exception) {
+            // Ignore
+        }
     }
 
     override fun onBind(intent: Intent?): IBinder? = null
-
-    // -------------------------------------------------------------------------
-    // Private helpers
-    // -------------------------------------------------------------------------
 
     private fun createNotificationChannel() {
         val channel = NotificationChannel(
             CHANNEL_ID,
             "Week Number",
-            // IMPORTANCE_DEFAULT is required for the icon to appear in the status bar on
-            // Android 12+. IMPORTANCE_LOW suppresses it. We silence sound/vibration manually.
             NotificationManager.IMPORTANCE_DEFAULT
         ).apply {
             description = "Displays the current week number in the status bar"
             setShowBadge(false)
-            // Silence all alerts — we only want the status bar icon, no sounds or vibration
             setSound(null, AudioAttributes.Builder().build())
             enableVibration(false)
             enableLights(false)
@@ -86,7 +92,6 @@ class WeekService : Service() {
         val showBorder = PrefsHelper.isShowBorderEnabled(this)
         val icon = WeekIconHelper.buildIcon(weekNumber, fillFactor, showBorder)
 
-        // Tap on notification → open MainActivity
         val openAppIntent = Intent(this, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
         }
@@ -99,7 +104,7 @@ class WeekService : Service() {
             .setSmallIcon(icon)
             .setContentTitle("Week $weekNumber")
             .setContentIntent(pendingIntent)
-            .setOngoing(true)           // Makes it undismissable by the user
+            .setOngoing(true)
             .setOnlyAlertOnce(true)
             .build()
     }
