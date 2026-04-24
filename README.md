@@ -1,6 +1,6 @@
 # WeekNow
 
-A minimal Android app that permanently shows the current **ISO week number** as an icon in the status bar.
+A minimal Android app that permanently shows the current **ISO week number** as an icon in the status bar — and on your Wear OS watch face.
 
 ![WeekNow](images/WeekNow.png)
 
@@ -15,6 +15,8 @@ A minimal Android app that permanently shows the current **ISO week number** as 
   - Icon size — S / M / L
   - First day of week — Monday (ISO 8601) or Sunday (US convention)
 - 🔔 **Tap notification to open the app**
+- ⌚ **Wear OS complication** — show the week number on any watch face (SHORT_TEXT or RANGED_VALUE arc)
+  - Watch-side config to pick Monday or Sunday as first day of week
 
 | Light Mode | Dark Mode |
 | :---: | :---: |
@@ -35,6 +37,8 @@ If the week number is missing from your status bar on a Samsung device:
 
 ## How it works
 
+### Phone (`:app`)
+
 | Component | Role |
 |---|---|
 | `WeekService` | Foreground service; draws the week number as a white bitmap icon and posts a persistent notification |
@@ -43,9 +47,19 @@ If the week number is missing from your status bar on a Samsung device:
 | `PrefsHelper` | `SharedPreferences` wrapper for all settings |
 | `MainActivity` | Single-screen UI with enable toggle, icon size, and first-day-of-week picker |
 
+### Watch (`:wear`)
+
+| Component | Role |
+|---|---|
+| `WeekComplicationService` | Complication data source; provides the week number as SHORT_TEXT (icon + "17") or RANGED_VALUE (progress arc) |
+| `ComplicationConfigActivity` | Watch-side config screen for choosing Monday or Sunday as first day of week |
+| `WearPrefsHelper` | Watch-side `SharedPreferences` for the first-day-of-week setting |
+| `WeekHelper` | Week number calculation (shared logic, independent of phone module) |
+
 ## Requirements
 
-- Android 8.0+ (API 26)
+- **Phone:** Android 8.0+ (API 26)
+- **Watch:** Wear OS 2+ (API 28)
 - Android Studio (Hedgehog or newer recommended)
 
 ## Getting started

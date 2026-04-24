@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "WeekNow"
 include(":app")
+include(":wear")

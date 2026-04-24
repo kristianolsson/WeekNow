@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WeekNow</string>
+    <string name="config_title">First day of week</string>
+    <string name="monday">Monday</string>
+    <string name="sunday">Sunday</string>
+</resources>
