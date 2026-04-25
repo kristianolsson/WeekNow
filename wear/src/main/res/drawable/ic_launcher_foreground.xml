@@ -4,32 +4,41 @@
     android:viewportWidth="108"
     android:viewportHeight="108">
 
-    <!-- Calendar outline -->
-    <path
-        android:fillColor="@android:color/transparent"
-        android:strokeColor="#FFFFFF"
-        android:strokeWidth="3.5"
-        android:pathData="M20,26 h68 v62 h-68 z" />
+    <!-- Scaled down and centered Calendar structure -->
+    <group
+        android:scaleX="0.65"
+        android:scaleY="0.65"
+        android:pivotX="54"
+        android:pivotY="54"
+        android:translateY="2">
 
-    <!-- Calendar top bar -->
-    <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M20,24 h68 v10 h-68 z" />
+        <!-- Calendar outline in dark greyish-teal -->
+        <path
+            android:fillColor="@android:color/transparent"
+            android:strokeColor="#2D3330"
+            android:strokeWidth="5"
+            android:pathData="M20,26 h68 v62 h-68 z" />
 
-    <!-- Two pins -->
-    <path
-        android:fillColor="@android:color/transparent"
-        android:strokeColor="#FFFFFF"
-        android:strokeWidth="5"
-        android:strokeLineCap="round"
-        android:pathData="M38,17 v10 M70,17 v10" />
+        <!-- Calendar top bar in dark greyish-teal -->
+        <path
+            android:fillColor="#2D3330"
+            android:pathData="M20,24 h68 v10 h-68 z" />
 
-    <!-- Bold W as uniform stroke -->
-    <path
-        android:fillColor="@android:color/transparent"
-        android:strokeColor="#FFFFFF"
-        android:strokeWidth="6"
-        android:strokeLineCap="round"
-        android:strokeLineJoin="round"
-        android:pathData="M32,44 L42,72 L54,50 L66,72 L76,44" />
+        <!-- Two pins in dark greyish-teal -->
+        <path
+            android:fillColor="@android:color/transparent"
+            android:strokeColor="#2D3330"
+            android:strokeWidth="6"
+            android:strokeLineCap="round"
+            android:pathData="M38,17 v10 M70,17 v10" />
+
+        <!-- W in dark greyish-teal - Reduced stroke (7.5) -->
+        <path
+            android:fillColor="@android:color/transparent"
+            android:strokeColor="#2D3330"
+            android:strokeWidth="7.5"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M32,46 L42,74 L54,52 L66,74 L76,46" />
+    </group>
 </vector>
