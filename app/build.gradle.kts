@@ -11,8 +11,8 @@ android {
         applicationId = "com.kristianolsson.weeknow"
         minSdk = 26
         targetSdk = 35
-        versionCode = 5
-        versionName = "1.4"
+        versionCode = 14
+        versionName = "1.4.2"
     }
 
     buildTypes {
