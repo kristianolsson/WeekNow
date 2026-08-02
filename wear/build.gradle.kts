@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.kristianolsson.weeknow.wear"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.kristianolsson.weeknow"
         minSdk = 28
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 16
         versionName = "1.1"
     }
